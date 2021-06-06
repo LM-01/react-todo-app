@@ -49,6 +49,15 @@
   .task-container:last-child {
     border-radius: 0 0 4px 4px;
     border: 0; }
+  .task-container--checkmark {
+    height: 20px;
+    width: 20px;
+    border: 1px solid #393a4c;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer; }
+    .task-container--checkmark--active {
+      background: pink; }
 
 body {
   color: #cacde8;
@@ -65,7 +74,7 @@ body {
   margin-top: 5px; }
 
 .mt-md {
-  margin-top: 15px; }
+  margin-top: 20px; }
 
 .mt-lg {
   margin-top: 50px; }
