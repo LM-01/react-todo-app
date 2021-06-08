@@ -1,0 +1,26 @@
+$Very-Dark-Blue: hsl(235, 21%, 11%);
+$Very-Dark-Desaturate-Blue: hsl(235, 24%, 19%);
+$Light-Grayish-Blue: hsl(234, 39%, 85%);
+$Light-Grayish-Blue-hover-: hsl(236, 33%, 92%);
+$Dark-Grayish-Blue: hsl(234, 11%, 52%);
+$Very-Dark-Grayish-Blue-light: hsl(233, 14%, 35%);
+$Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+$Bright-Blue: hsl(220, 98%, 61%);
+
+$heading-color: white;
+$font-color: $Dark-Grayish-Blue;
+
+$background-color: #fafafa;
+$task-bg: white;
+$task-border: $Light-Grayish-Blue;
+$inactive-text: $Light-Grayish-Blue;
+$active-filter: $Bright-Blue;
+
+$shadow-color: $Light-Grayish-Blue;
+$dragtextcolor: $Dark-Grayish-Blue;
+
+
+// Images
+$background-header-image: '../images/bg-desktop-light.jpg';
+
+@import '../main.scss'

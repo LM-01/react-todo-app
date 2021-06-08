@@ -9,8 +9,10 @@
     "helmet": "^4.6.0",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -18,7 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile:sass": "node-sass ./src/sass/themes/dark-theme.scss ./src/css/dark-theme.css"
+    "compile:sass": "npm run compile:light compile:dark",
+    "compile:light": "node-sass ./src/sass/themes/light-theme.scss ./public/css/light-theme.css",
+    "compile:dark": "node-sass ./src/sass/themes/dark-theme.scss ./public/css/dark-theme.css"
   },
   "eslintConfig": {
     "extends": [
