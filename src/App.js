@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from './components/Header.jsx';
+import Header from './components/header.jsx';
 import Task from "./components/Task.jsx";
 import ActionBar from "./components/ActionBar.jsx";
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
