@@ -8,7 +8,7 @@ export default function Task(props){
         // console.log(props.task)
         setState(props.task)
         
-    },[])
+    },[props])
 
     useEffect(()=> {
         if(props.task.status === 'Open'){
@@ -17,7 +17,7 @@ export default function Task(props){
             setIsClosed(true)
         }
         props.saveTasks()
-    })
+    }, [props])
 
     const handleClick = () => {
         if(isClosed){

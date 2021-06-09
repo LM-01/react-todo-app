@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;700&display=swap");
 .background-header {
   background-color: pink;
-  background-image: url("../images/bg-desktop-dark.jpg");
+  background-image: url("../images/bg-desktop-light.jpg");
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -48,7 +48,7 @@
   border-radius: 4px;
   border: 0;
   padding: 0 15px;
-  background-color: #25273c;
+  background-color: white;
   display: flex;
   align-items: center;
   box-shadow: 0px 6px 8px 0 #1d1d1d23; }
@@ -60,11 +60,11 @@
     width: 20px;
     display: inline-flex;
     border-radius: 50%;
-    border: 1px solid #393a4c;
+    border: 1px solid #cacde8;
     padding: 0;
     margin-right: 10px; }
   .task-input input {
-    color: #cacde8;
+    color: #777a92;
     font-family: 'Josefin Sans';
     font-size: 1.3rem;
     background-color: transparent;
@@ -82,7 +82,7 @@
   position: absolute; }
 
 body {
-  color: #cacde8;
+  color: #777a92;
   font-size: 1rem;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400; }
@@ -98,12 +98,12 @@ body {
   padding: 0; }
 
 body {
-  background-color: #161722; }
+  background-color: #fafafa; }
 
 .action-bar {
   border-radius: 0 0 4px 4px; }
   .action-bar div {
-    color: #777a92;
+    color: #cacde8;
     font-size: 1rem; }
 
 #actionBar {
@@ -114,7 +114,7 @@ body {
   justify-content: space-between;
   display: flex; }
   .main-filters span:hover {
-    color: #cacde8; }
+    color: #777a92; }
 
 @media (max-width: 550px) {
   .main-filters {
@@ -126,7 +126,7 @@ body {
   color: #3a7bfd; }
 
 .clear-completed span:hover {
-  color: #cacde8; }
+  color: #777a92; }
 
 .drag-text {
   width: 100%;
@@ -144,15 +144,15 @@ body {
 
 .task-container {
   height: 3.1rem;
-  border-bottom: 1px solid #393a4c;
+  border-bottom: 1px solid #cacde8;
   padding: 0 15px;
-  background-color: #25273c;
-  color: #cacde8;
+  background-color: white;
+  color: #777a92;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0px 6px 8px 0 #161722; }
+  box-shadow: 0px 6px 8px 0 #cacde8; }
   .task-container:hover > .delete-icon {
     opacity: 1;
     transition: 0.2s; }
@@ -165,7 +165,7 @@ body {
     width: 20px;
     display: flex;
     border-radius: 50%;
-    border: 1px solid #393a4c;
+    border: 1px solid #cacde8;
     padding: 0;
     margin-right: 10px; }
     .checkmark-container ~ label:hover {
@@ -177,7 +177,7 @@ body {
     background-position: center; }
   .checkmark-container:checked ~ .task-description {
     text-decoration: line-through;
-    color: #777a92; }
+    color: #cacde8; }
 
 .task-description {
   height: 100%;

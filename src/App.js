@@ -32,6 +32,7 @@ function App() {
       setAllTasks(tasksList)
       setFilter('ALL')
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   useEffect(()=> {
@@ -52,14 +53,14 @@ function App() {
         // For Tasks
         let i = tasks.findIndex(e => e.id === action.payload.id)
         let temp = tasks
-        let newArr = temp.splice(i,1)
+        temp.splice(i,1)
         // console.log(temp)
         setTasks([...temp]) 
         
         // For all tasks
         let i1 = allTasks.findIndex(e => e.id === action.payload.id)
         let temp1 = allTasks
-        let newArr1 = temp1.splice(i1,1)
+        temp1.splice(i1,1)
         // console.log(temp)
         setAllTasks([...temp1])    
         break;

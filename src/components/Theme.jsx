@@ -6,7 +6,7 @@ export default function Theme(){
     useEffect(()=> {
         const link = document.createElement('link');
         link.setAttribute('rel', 'stylesheet');
-        link.setAttribute('href', '../css/dark-theme.css');
+        link.setAttribute('href', 'css/dark-theme.css');
         link.setAttribute('id', 'theme-css')
 
         // Append to the `head` element
@@ -17,10 +17,10 @@ export default function Theme(){
         // let head = document.querySelector("head > link:nth-child(7)")
         let head = document.querySelector('#theme-css')
         if(isLight){
-            head.setAttribute('href','../css/dark-theme.css')
+            head.setAttribute('href','css/dark-theme.css')
             setIsLight(false)
         } else {
-            head.setAttribute('href','../css/light-theme.css')
+            head.setAttribute('href','css/light-theme.css')
             setIsLight(true)
         }
     }
@@ -28,8 +28,8 @@ export default function Theme(){
     return (
         <>
          <div onClick={()=> changeTheme()} className="theme-container">
-             <img src='../images/icon-sun.svg' alt='Sun' className="theme-icon" style={isLight ? {display:'none'}: null} />
-             <img src='../images/icon-moon.svg' alt='Moon' className="theme-icon" style={isLight ? null: {display:'none'}}/></div>
+             <img src='images/icon-sun.svg' alt='Sun' className="theme-icon" style={isLight ? {display:'none'}: null} />
+             <img src='images/icon-moon.svg' alt='Moon' className="theme-icon" style={isLight ? null: {display:'none'}}/></div>
         </>
     )
 }
