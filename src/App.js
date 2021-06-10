@@ -19,8 +19,10 @@ function App() {
     // Checks for saved state in local storage
     if(allTasks.length === 0){
       let tasksList = JSON.parse(localStorage.getItem('todo-taskList'))
-      setTasks(tasksList)
-      setAllTasks(tasksList)
+      if(tasksList !== null){
+        setTasks(tasksList)
+        setAllTasks(tasksList)
+      }
       setFilter('ALL')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
