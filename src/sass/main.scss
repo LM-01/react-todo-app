@@ -1,8 +1,11 @@
+@import './_base.scss';
 @import './_layout.scss';
 @import './_typography.scss';
-@import './_base.scss';
 
 @import './components/_actionBar.scss';
 @import './components/_taskItems.scss';
+
+@import './themes/dark-theme.scss';
+@import './themes/light-theme.scss';
 
 @import './_util.scss';

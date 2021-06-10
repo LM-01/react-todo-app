@@ -1,25 +1,14 @@
-$Very-Dark-Blue: hsl(235, 21%, 11%);
-$Very-Dark-Desaturate-Blue: hsl(235, 24%, 19%);
-$Light-Grayish-Blue: hsl(234, 39%, 85%);
-$Light-Grayish-Blue-hover-: hsl(236, 33%, 92%);
-$Dark-Grayish-Blue: hsl(234, 11%, 52%);
-$Very-Dark-Grayish-Blue-light: hsl(233, 14%, 35%);
-$Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
-$Bright-Blue: hsl(220, 98%, 61%);
-
-$heading-color: white;
-$font-color: $Light-Grayish-Blue;
-
-$background-color: $Very-Dark-Blue;
-$task-bg: $Very-Dark-Desaturate-Blue;
-$task-border: $Very-Dark-Grayish-Blue;
-$inactive-text: $Dark-Grayish-Blue;
-$active-filter: $Bright-Blue;
-
-$shadow-color: $Very-Dark-Blue;
-$dragtextcolor: $Dark-Grayish-Blue;
-
-// Images
-$background-header-image: '../images/bg-desktop-dark.jpg';
-
-@import '../main.scss'
+.dark_theme {
+    --heading-color: white;
+    --font-color: var(--Light-Grayish-Blue);
+    
+    --background-color: var(--Very-Dark-Blue);
+    --task-bg: var(--Very-Dark-Desaturate-Blue);
+    --task-border: var(--Very-Dark-Grayish-Blue);
+    --inactive-text: var(--Dark-Grayish-Blue);
+    --active-filter: var(--Bright-Blue);
+    
+    --shadow-color: var(--Very-Dark-Blue);
+    --dragtextcolor: var(--Dark-Grayish-Blue);
+    --background-header-image: url('../images/bg-desktop-dark.jpg');
+}

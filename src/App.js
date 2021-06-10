@@ -3,25 +3,16 @@ import Header from './components/Input-Header.jsx';
 import Task from "./components/Task.jsx";
 import ActionBar from "./components/ActionBar.jsx";
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-
-// TODO:
-// [X] Local Storage of State
-// [X] Delete tasks
-// [X] Filter tasks
-// [X] Task Filter Bar
-// [X] Implement Theme Changes
-// [X] Look into Drag and Drop functionality
-// [X] Mobile Responsiveness
-// [] Final Touches - Theming
+import './css/style.css'
 
 // BUG:
-// [X] Theming not working
+// [] Theming not working
 
 function App() {
   const [tasks, setTasks] = useState([])
   const [allTasks, setAllTasks] = useState([])
   const [filter, setFilter] = useState('ALL')
-  
+
 
   useEffect(()=>{
     // Initial state of the application
@@ -38,7 +29,7 @@ function App() {
   useEffect(()=> {
     // Saves the task on load
     saveTasks()
-  })
+  },[allTasks])
 
   function handleTasks(action){
     // Creates and deletes tasks
@@ -59,7 +50,7 @@ function App() {
         
         // For all tasks
         let i1 = allTasks.findIndex(e => e.id === action.payload.id)
-        let temp1 = allTasks
+        let temp1 = Array.from(allTasks)
         temp1.splice(i1,1)
         // console.log(temp)
         setAllTasks([...temp1])    
@@ -128,9 +119,30 @@ function App() {
 
   }
 
+const changeTaskStatus = (tObj) => {  
+  let newObj = {...tObj}
+  if(newObj.status === 'Open'){
+    newObj.status = 'Closed'
+  } else {
+    newObj.status = 'Open'
+  }
+  let newStateArr = Array.from(allTasks)
+  //console.log(tObj)
+  //console.log(newObj)
+  let eli = newStateArr.findIndex(obj => obj.id === newObj.id)
+  //console.log(newStateArr)
+  //console.log(eli)
+  newStateArr.splice(eli,1,newObj)
+  //console.log(newStateArr)
+  setAllTasks(newStateArr)
+  setTasks(newStateArr)
+  //setFilter(filter)
+
+}
+
   return (
     <>
-    
+    <div id='main-div'>
     <div className='background-header'/>
     <div className='grid-container'>
       <Header handleTasks={handleTasks}/>
@@ -146,7 +158,7 @@ function App() {
                       {(provided) => (
                      
                         <li  ref={provided.innerRef} index={ind}  {...provided.draggableProps} {...provided.dragHandleProps}>
-                            <Task task={task}  handleTasks={handleTasks} saveTasks={saveTasks} />
+                            <Task task={task}  handleTasks={handleTasks} saveTasks={saveTasks} changeTaskStatus={changeTaskStatus}/>
                         </li>
                  
                  )}
@@ -164,7 +176,7 @@ function App() {
         <ActionBar tasks={tasks} handleTasks={handleTasks} filter={filter} setFilter={handleFilter}/>
       </div>  
     </div>
-    
+    </div>
     </>
   );
 }

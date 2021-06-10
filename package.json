@@ -1,5 +1,5 @@
 {
-  "homepage": "https://gifted-jennings-c8cac2.netlify.app/",
+  "homepage": ".",
   "name": "todo-app",
   "version": "0.1.0",
   "private": true,
@@ -17,15 +17,11 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile:sass": "npm run compile:light compile:dark",
-    "compile:light": "node-sass ./src/sass/themes/light-theme.scss ./public/css/light-theme.css",
-    "compile:dark": "node-sass ./src/sass/themes/dark-theme.scss ./public/css/dark-theme.css"
+    "compile:sass": "node-sass ./src/sass/main.scss ./src/css/style.css"
   },
   "eslintConfig": {
     "extends": [

@@ -5,48 +5,27 @@ export default function Task(props){
     const [isClosed, setIsClosed] = useState(null)
 
     useEffect(()=> {
-        // console.log(props.task)
+        // When component loads, it creates a state and adds the task
         setState(props.task)
         
     },[props])
 
-    useEffect(()=> {
-        if(props.task.status === 'Open'){
-            setIsClosed(false)
-        } else {
-            setIsClosed(true)
-        }
-        props.saveTasks()
-    }, [props])
-
-    const handleClick = () => {
-        if(isClosed){
-            setIsClosed(!isClosed)
-            setState(prevState => {
-                prevState.status = 'Open'
-                return prevState;
-            })
-        } else {
-            setIsClosed(!isClosed)
-            setState(prevState => {
-                prevState.status = 'Closed'
-                return prevState;
-            })
-        }
+    function handleClick(){
+        props.changeTaskStatus(props.task)
     }
 
     function handleDelete(){
         // console.log(state)
-        props.handleTasks({type:'DELETE', payload:state})
+        props.handleTasks({type:'DELETE', payload:props.task})
     }
 
     return (
         <>
         
         <div className="task-container" >
-          <input id={state.id} className='checkmark-container' checked={isClosed} type='checkbox' />
-          <label for={state.id} onClick={()=> handleClick()}></label>
-          <div className="task-description" id='task-description' onClick={()=> handleClick()}>{state.task}</div>
+          <input id={props.task.id} className='checkmark-container' checked={props.task.status === 'Closed'} type='checkbox' />
+          <label htmlFor={props.task.id} onClick={()=> handleClick()}></label>
+          <div className="task-description" id='task-description' onClick={()=> handleClick()}>{props.task.task}</div>
           <div className="delete-icon" onClick={()=> handleDelete()}></div>
         </div>
         

@@ -1,8 +1,31 @@
 :root, * {
     margin: 0;
     padding: 0;
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturate-Blue: hsl(235, 24%, 19%);
+    --Light-Grayish-Blue: hsl(234, 39%, 85%);
+    --Light-Grayish-Blue-hover-: hsl(236, 33%, 92%);
+    --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+    --Very-Dark-Grayish-Blue-light: hsl(233, 14%, 35%);
+    --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+    --Bright-Blue: hsl(220, 98%, 61%);
+
+    // --heading-color: white;
+    // --font-color: var(--Dark-Grayish-Blue);
+    
+    // --background-color: #fafafa;
+    // --task-bg: white;
+    // --task-border: var(--Light-Grayish-Blue);
+    // --inactive-text: var(--Light-Grayish-Blue);
+    // --active-filter: var(--Bright-Blue);
+    
+    // --shadow-color: var(--Light-Grayish-Blue);
+    // --dragtextcolor: var(--Dark-Grayish-Blue);
+    
+    // // Images
+    // --background-header-image: url('../images/bg-desktop-light.jpg'); 
 }
 
 body {
-    background-color: $background-color;
+    background-color: var(--background-color);
 }

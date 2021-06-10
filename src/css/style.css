@@ -1,7 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;700&display=swap");
+:root, * {
+  margin: 0;
+  padding: 0;
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturate-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover-: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue-light: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+  --Bright-Blue: hsl(220, 98%, 61%); }
+
+body {
+  background-color: var(--background-color); }
+
 .background-header {
   background-color: pink;
-  background-image: url("../images/bg-desktop-dark.jpg");
+  background-image: var(--background-header-image);
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -48,7 +63,7 @@
   border-radius: 4px;
   border: 0;
   padding: 0 15px;
-  background-color: #25273c;
+  background-color: var(--task-bg);
   display: flex;
   align-items: center;
   box-shadow: 0px 6px 8px 0 #1d1d1d23; }
@@ -60,11 +75,11 @@
     width: 20px;
     display: inline-flex;
     border-radius: 50%;
-    border: 1px solid #393a4c;
+    border: 1px solid var(--task-border);
     padding: 0;
     margin-right: 10px; }
   .task-input input {
-    color: #cacde8;
+    color: var(--font-color);
     font-family: 'Josefin Sans';
     font-size: 1.3rem;
     background-color: transparent;
@@ -82,28 +97,21 @@
   position: absolute; }
 
 body {
-  color: #cacde8;
+  color: var(--font-color);
   font-size: 1rem;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400; }
 
 .main-heading {
-  color: white;
+  color: var(--heading-color);
   font-size: 2.5rem;
   letter-spacing: 10px;
   margin-bottom: 10px; }
 
-:root, * {
-  margin: 0;
-  padding: 0; }
-
-body {
-  background-color: #161722; }
-
 .action-bar {
   border-radius: 0 0 4px 4px; }
   .action-bar div {
-    color: #777a92;
+    color: var(--inactive-text);
     font-size: 1rem; }
 
 #actionBar {
@@ -114,7 +122,7 @@ body {
   justify-content: space-between;
   display: flex; }
   .main-filters span:hover {
-    color: #cacde8; }
+    color: var(--font-color); }
 
 @media (max-width: 550px) {
   .main-filters {
@@ -123,10 +131,10 @@ body {
     display: flex; } }
 
 .active-filter {
-  color: #3a7bfd; }
+  color: var(--active-filter); }
 
 .clear-completed span:hover {
-  color: #cacde8; }
+  color: var(--font-color); }
 
 .drag-text {
   width: 100%;
@@ -135,7 +143,7 @@ body {
   justify-content: center;
   margin-top: 3rem;
   font-size: 0.8rem;
-  color: #777a92; }
+  color: var(--dragtextcolor); }
 
 .task-list {
   list-style: none; }
@@ -144,15 +152,15 @@ body {
 
 .task-container {
   height: 3.1rem;
-  border-bottom: 1px solid #393a4c;
+  border-bottom: 1px solid var(--task-border);
   padding: 0 15px;
-  background-color: #25273c;
-  color: #cacde8;
+  background-color: var(--task-bg);
+  color: var(--font-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0px 6px 8px 0 #161722; }
+  box-shadow: 0px 6px 8px 0 var(--shadow-color); }
   .task-container:hover > .delete-icon {
     opacity: 1;
     transition: 0.2s; }
@@ -165,7 +173,7 @@ body {
     width: 20px;
     display: flex;
     border-radius: 50%;
-    border: 1px solid #393a4c;
+    border: 1px solid var(--task-border);
     padding: 0;
     margin-right: 10px; }
     .checkmark-container ~ label:hover {
@@ -177,7 +185,7 @@ body {
     background-position: center; }
   .checkmark-container:checked ~ .task-description {
     text-decoration: line-through;
-    color: #777a92; }
+    color: var(--inactive-text); }
 
 .task-description {
   height: 100%;
@@ -198,6 +206,30 @@ body {
   justify-content: center;
   background-position: center;
   opacity: 0; }
+
+.dark_theme {
+  --heading-color: white;
+  --font-color: var(--Light-Grayish-Blue);
+  --background-color: var(--Very-Dark-Blue);
+  --task-bg: var(--Very-Dark-Desaturate-Blue);
+  --task-border: var(--Very-Dark-Grayish-Blue);
+  --inactive-text: var(--Dark-Grayish-Blue);
+  --active-filter: var(--Bright-Blue);
+  --shadow-color: var(--Very-Dark-Blue);
+  --dragtextcolor: var(--Dark-Grayish-Blue);
+  --background-header-image: url('../images/bg-desktop-dark.jpg'); }
+
+.light_theme {
+  --heading-color: white;
+  --font-color: var(--Dark-Grayish-Blue);
+  --background-color: #fafafa;
+  --task-bg: white;
+  --task-border: var(--Light-Grayish-Blue);
+  --inactive-text: var(--Light-Grayish-Blue);
+  --active-filter: var(--Bright-Blue);
+  --shadow-color: var(--Light-Grayish-Blue);
+  --dragtextcolor: var(--Dark-Grayish-Blue);
+  --background-header-image: url('../images/bg-desktop-light.jpg'); }
 
 .mt-sm {
   margin-top: 5px; }

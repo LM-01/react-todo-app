@@ -5,6 +5,7 @@ export default function ActionBar(props){
   const [taskCount, setTaskCount] = useState(0)
 
   useEffect(()=>{
+    //Changes the task count, whenever the number of tasks changes
     let itemsLeft = props.tasks.filter(el => el.status === 'Open').length
     setTaskCount(itemsLeft)
   },[props.tasks])
