@@ -27,7 +27,7 @@ export default function Header(props){
             <div className='grid-row task_input mt-md'>
                 <div className='task-input'>
                     <span></span>
-                    <input value={inputText} onKeyPress={handleKeyPress} onChange={handleChange}/>
+                    <input value={inputText} placeholder="What do I need to do?" onKeyPress={handleKeyPress} onChange={handleChange}/>
                 </div>
             </div>
         </div>

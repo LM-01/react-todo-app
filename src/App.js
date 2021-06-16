@@ -5,8 +5,9 @@ import ActionBar from "./components/ActionBar.jsx";
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import './css/style.css'
 
-// BUG:
-// [] Theming not working
+// TODO:
+//  [] Add a 'ADD TASKS' section if no tasks available
+//  [] Fix mobile version action bar
 
 function App() {
   const [tasks, setTasks] = useState([])
@@ -23,6 +24,12 @@ function App() {
         setTasks(tasksList)
         setAllTasks(tasksList)
       }
+      let initialTasks = [{id:1, task:'Go to grocery store', status:'Open'},
+                          {id:2, task:'Wash Car', status: 'Closed'},
+                          {id:3, task:'Write book report', status: 'Open'}]
+        setTasks(initialTasks)
+        setAllTasks(initialTasks)
+
       setFilter('ALL')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
