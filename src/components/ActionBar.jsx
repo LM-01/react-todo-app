@@ -31,6 +31,10 @@ export default function ActionBar(props){
         </div>
         <div className='drag-text'>
           Drag and drop to reorder list
+
+        </div>
+        <div className='footer_link'>
+          <a href='https://github.com/LM-01' className="footer_link">Created by: Lester Mollinedo</a>
         </div>
         </>
     )

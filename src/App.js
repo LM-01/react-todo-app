@@ -136,16 +136,11 @@ const changeTaskStatus = (tObj) => {
     newObj.status = 'Open'
   }
   let newStateArr = Array.from(allTasks)
-  //console.log(tObj)
-  //console.log(newObj)
   let eli = newStateArr.findIndex(obj => obj.id === newObj.id)
-  //console.log(newStateArr)
-  //console.log(eli)
   newStateArr.splice(eli,1,newObj)
-  //console.log(newStateArr)
   setAllTasks(newStateArr)
   setTasks(newStateArr)
-  //setFilter(filter)
+
 
 }
 
