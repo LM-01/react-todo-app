@@ -23,7 +23,7 @@ export default function Task(props){
         <>
         
         <div className="task-container" >
-          <input id={props.task.id} className='checkmark-container' checked={props.task.status === 'Closed'} type='checkbox' />
+          <input id={props.task.id} className='checkmark-container' checked={props.task.status === 'Closed'} type='checkbox' readOnly />
           <label htmlFor={props.task.id} onClick={()=> handleClick()}></label>
           <div className="task-description" id='task-description' onClick={()=> handleClick()}>{props.task.task}</div>
           <div className="delete-icon" onClick={()=> handleDelete()}></div>

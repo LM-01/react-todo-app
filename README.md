@@ -1,6 +1,6 @@
 ## Overview
 
-This "Todo App" was created using React and Sass. Feautes drag and drop functionality, and state management for persistence.
+This "Todo App" was created using React and Sass. Features drag and drop functionality, and state management for persistence.
 
 - Live Site URL: [https://gifted-jennings-c8cac2.netlify.app/](https://gifted-jennings-c8cac2.netlify.app/)
 

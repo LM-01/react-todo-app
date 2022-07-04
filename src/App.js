@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Header from './components/Input-Header.jsx';
 import Task from "./components/Task.jsx";
 import ActionBar from "./components/ActionBar.jsx";
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import './css/style.css'
 
-// TODO:
-//  [] Add a 'ADD TASKS' section if no tasks available
-//  [] Fix mobile version action bar
-
 function App() {
   const [tasks, setTasks] = useState([])
   const [allTasks, setAllTasks] = useState([])
   const [filter, setFilter] = useState('ALL')
 
+  const saveTasks = useCallback(() =>{
+    // Saves tasks to local storage for persistance
+    localStorage.setItem('todo-taskList',JSON.stringify(allTasks))
+  },[allTasks])
 
   useEffect(()=>{
     // Initial state of the application
     // Checks for saved state in local storage
     if(allTasks.length === 0){
       let tasksList = JSON.parse(localStorage.getItem('todo-taskList'))
-      if(tasksList !== null){
+      if(tasksList.length > 0){
         setTasks(tasksList)
         setAllTasks(tasksList)
+      } else {
+        let initialTasks = [{id:1, task:'Go to grocery store', status:'Open'},
+                            {id:2, task:'Wash Car', status: 'Closed'},
+                            {id:3, task:'Write book report', status: 'Open'}]
+          setTasks(initialTasks)
+          setAllTasks(initialTasks)
       }
-      let initialTasks = [{id:1, task:'Go to grocery store', status:'Open'},
-                          {id:2, task:'Wash Car', status: 'Closed'},
-                          {id:3, task:'Write book report', status: 'Open'}]
-        setTasks(initialTasks)
-        setAllTasks(initialTasks)
-
       setFilter('ALL')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -38,7 +38,7 @@ function App() {
   useEffect(()=> {
     // Saves the task on load
     saveTasks()
-  },[allTasks])
+  },[allTasks, saveTasks])
 
   function handleTasks(action){
     // Creates and deletes tasks
@@ -72,10 +72,7 @@ function App() {
 
   }
 
-  function saveTasks(){
-    // Saves tasks to local storage for persistance
-    localStorage.setItem('todo-taskList',JSON.stringify(allTasks))
-  }
+
 
   function handleFilter(msg){
     // Uses the filters to create a new array that will be used to display the tasks
