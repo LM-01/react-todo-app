@@ -12,17 +12,20 @@ function App() {
 
   const saveTasks = useCallback(() =>{
     // Saves tasks to local storage for persistance
-    localStorage.setItem('todo-taskList',JSON.stringify(allTasks))
+    localStorage.setItem('todo-taskList', JSON.stringify(allTasks))
   },[allTasks])
+
+  const loadTasks = () => {
+    // Loads tasks from local storage
+    const savedTasks = JSON.parse(localStorage.getItem('todo-taskList'))
+    if(savedTasks) setAllTasks(savedTasks)
+  }
 
   useEffect(()=>{
     // Initial state of the application
     // Checks for saved state in local storage
     if(allTasks.length === 0){
-      let tasksList = JSON.parse(localStorage.getItem('todo-taskList'))
-      if(tasksList.length > 0){
-        setTasks(tasksList)
-        setAllTasks(tasksList)
+      loadTasks()
       } else {
         let initialTasks = [{id:1, task:'Go to grocery store', status:'Open'},
                             {id:2, task:'Wash Car', status: 'Closed'},
@@ -31,14 +34,7 @@ function App() {
           setAllTasks(initialTasks)
       }
       setFilter('ALL')
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
-
-  useEffect(()=> {
-    // Saves the task on load
-    saveTasks()
-  },[allTasks, saveTasks])
+    },[])
 
   function handleTasks(action){
     // Creates and deletes tasks
